@@ -6,6 +6,9 @@ import {
 } from "@shopify/shopify-app-react-router/server";
 import { PrismaSessionStorage } from "@shopify/shopify-app-session-storage-prisma";
 import prisma from "./db.server";
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const shopify = shopifyApp({
   apiKey: process.env.SHOPIFY_API_KEY,
