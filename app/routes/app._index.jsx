@@ -17,7 +17,7 @@ export default function Index() {
   const response = useLoaderData();
   const handleConnectApp = () => {
     window.open(
-      `https://retail-system-overview.vercel.app/authenticate?shop=${response.myshopifyDomain}&email=${response.email}&appUrl=${response.url}`,
+      `http://localhost:5173/authenticate?shop=${response.myshopifyDomain}&email=${response.email}&appUrl=${response.url}`,
       "_top",
     );
   };

@@ -2,7 +2,7 @@
 
 client_id = "96be6b327acf425fe48285b04b5e797f"
 name = "srs-app"
-application_url = "https://example.com"
+application_url = "https://srs-shopify-app.onrender.com"
 embedded = true
 
 [build]
@@ -12,19 +12,21 @@ automatically_update_urls_on_dev = true
 api_version = "2026-04"
 
   [[webhooks.subscriptions]]
-  topics = [ "app/uninstalled" ]
-  uri = "/webhooks/app/uninstalled"
-
-  [[webhooks.subscriptions]]
   topics = [ "app/scopes_update" ]
   uri = "/webhooks/app/scopes_update"
 
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_metaobject_definitions,write_metaobjects,write_products,read_products,write_products,read_orders"
+scopes = "read_customers,read_fulfillments,read_orders,read_products,read_shipping,write_metaobject_definitions,write_orders,write_products,write_shipping"
 
 [auth]
-redirect_urls = [ "https://shopify-project-16v9.onrender.com/shopifyAccount/callback" ]
+redirect_urls = [
+  "https://fb0b-119-156-120-134.ngrok-free.app/shopifyAccount/callback"
+]
 
 [product.metafields.app.demo_info]
 type = "single_line_text_field"
